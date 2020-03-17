@@ -64,7 +64,7 @@ module.exports = {
       },
         totalProt: {
           type: Sequelize.INTEGER,
-          defaultValue:0,
+          defaultValue: 0,
         },
         phrase: {
           type: Sequelize.STRING,  

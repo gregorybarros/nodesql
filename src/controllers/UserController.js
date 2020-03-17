@@ -3,9 +3,7 @@ const User = require('../models/User')
 
 module.exports = {
     async index(req, res) {
-        const users = await User.findAll({
-            where:{id:[1]}
-        })
+        const users = await User.findAll()
 
         return res.json(users)
     },
@@ -19,6 +17,7 @@ module.exports = {
     },
 
     async single(req, res) {
+
         const { id } = req.params
         const user = await User.findByPk(id)
 
@@ -26,7 +25,7 @@ module.exports = {
     },
 
     async update(req, res) {
-        
+        console.log(req.body)
         const { id } = req.params
         const user = await User.update(req.body, {
             where: {id}

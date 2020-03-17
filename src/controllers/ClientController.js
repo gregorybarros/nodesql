@@ -25,7 +25,7 @@ module.exports = {
     },
 
     async update(req, res) {
-        
+        console.log(req.body)
         const { id } = req.params
         const client = await Client.update(req.body, {
             where: {id}

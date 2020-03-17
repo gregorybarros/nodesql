@@ -3,10 +3,11 @@ const Protocol = require('../models/Protocol')
 
 module.exports = {
     async index(req, res) {
-        console.log(req.query.equal)
+        console.log(req.query)
         const {page, perPage, sort, equal} = req.query
         const protocols = await Protocol.findAndCountAll({
-            order:[["id", "DESC"]], 
+            order:[["createdAt", sort]],
+            where: equal?{user:equal}:null, 
             offset:parseInt(page)||0,
             limit:parseInt(perPage)||10,
             include: [{ association: 'users' },
@@ -34,7 +35,10 @@ module.exports = {
 
         const { id } = req.params
 
-        const protocol = await Protocol.findByPk(id)
+        const protocol = await Protocol.findByPk(id, {
+            include: [{ association: 'users' },
+            { association: 'clients' }] 
+        })
 
         return res.json(protocol)
     },

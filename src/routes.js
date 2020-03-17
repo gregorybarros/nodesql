@@ -12,8 +12,8 @@ routes.post('/auth', AuthController.index)
 routes.post('/users', UserController.store)
 routes.get('/users', UserController.index)
 routes.get('/users/:id', UserController.single)
-routes.put('/users/:id', ClientController.update)
-routes.delete('/users/:id', ClientController.delete)
+routes.put('/users/:id', UserController.update)
+routes.delete('/users/:id', UserController.delete)
 
 routes.post('/clients', ClientController.store)
 routes.get('/clients', ClientController.index)
@@ -25,8 +25,8 @@ routes.delete('/clients/:id', ClientController.delete)
 routes.post('/protocols', ProtocolController.store)
 routes.get('/protocols', ProtocolController.index)
 routes.get('/protocols/:id', ProtocolController.single)
-routes.put('/protocols/:id', ClientController.update)
-routes.delete('/protocols/:id', ClientController.delete)
+routes.put('/protocols/:id', ProtocolController.update)
+routes.delete('/protocols/:id', ProtocolController.delete)
 
 
 module.exports = routes

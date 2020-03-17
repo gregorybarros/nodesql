@@ -15,7 +15,8 @@ class User extends Model {
             state: DataTypes.STRING,
             adress: DataTypes.STRING,
             password: DataTypes.STRING,
-            eAdmin: DataTypes.INTEGER
+            eAdmin: DataTypes.INTEGER,
+            totalProt: DataTypes.INTEGER
         }, {
             sequelize
         })
